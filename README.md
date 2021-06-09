@@ -1,4 +1,4 @@
-# eslint-plugin-na
+# eslint-plugin-custom-rules
 
 Custom Eslint Plugin example
 
