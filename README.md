@@ -18,7 +18,7 @@ $ npm install eslint-plugin-custom-rules --save-dev
 
 ## Usage
 
-Add `na` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `custom-rules` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
