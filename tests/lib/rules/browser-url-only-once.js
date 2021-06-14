@@ -21,6 +21,7 @@ ruleTester.run("browser-url-only-once", rule, {
     "foo(a => a);",
     "foo(a => {a=b+c});",
     "it(() => { a=b+c; k++; browser.url(''); });",
+    "it(async () => { a=b+c; k++; await browser.url(''); });",
   ],
 
   invalid: [
@@ -42,6 +43,14 @@ ruleTester.run("browser-url-only-once", rule, {
     },
     {
       code: "it(async () => { await browser.url(''); a=b+c; await k++; browser.url(''); });",
+      errors: [
+        {
+          message: "Multiple `browser.url` call in single function",
+        },
+      ],
+    },
+    {
+      code: "it(async () => { await browser.url(''); a=b+c; await k++; await browser.url(''); });",
       errors: [
         {
           message: "Multiple `browser.url` call in single function",
